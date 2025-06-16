@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartLoom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: #f3f3f3;
+      line-height: 1.6;
+    }
+
+    .top-bar {
+    position: relative; /* Required for absolute child */
+    padding: 1.5rem 2rem;
+    height: 120px; /* Adjust as needed */
+    z-index: 10;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 400px;
+    width: 400px;
+  }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #191919, #0b0b0b);
+      padding: 2rem;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-btn {
+      background-color: #E4A0F7;
+      color: #0b0b0b;
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .cta-btn:hover {
+      background-color: #E4A0F7;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #eee;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background-color: #1a1a1a;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      max-width: 500px;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 25px rgba(255, 255, 255, 0.08);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto; /* maintain image aspect ratio */
+      max-height: 250px; /* optional: prevents image from being too tall */
+      object-fit: contain; /* ensures the entire image is visible */
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .product-card h3 {
+      margin-bottom: 0.5rem;
+      color: #fafafa;
+    }
+
+    .product-card p {
+      color: #ccc;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Only apply ✔ to payment section and faq */
+  .payment-section li::before,
+  .faq-card li::before {
+    content: "✔";
+    margin-right: 0.5rem;
+    color: #facc15;
+  }
+
+
+    .contact, .about {
+      color: #dcdcdc;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .faq {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #f3f3f3;
+    }
+
+    .faq-card {
+      background-color: #1a1a1a;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .faq-card h3 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .faq-card p {
+      color: #cccccc;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-card ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      color: #cccccc;
+    }
+
+    .faq-card li {
+      margin-bottom: 0.5rem;
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: #141414;
+      color: #bbb;
+    }
+    .terms-conditions {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .terms-conditions h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #f3f3f3;
+    }
+
+    .terms-card {
+      background-color: #1a1a1a;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    .terms-card h3 {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .terms-card ul {
+      padding-left: 1.5rem;
+      color: #cccccc;
+      line-height: 1.6;
+    }
+
+    .terms-card ul ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+      list-style-type: circle;
+    }
+
+    .terms-card li {
+      margin-bottom: 0.5rem;
+    }
+    /* In your <style> section or CSS file */
+    button {
+      background-color: #E4A0F7;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      margin: 0 0.5rem;
+      color: #0b0b0b;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background-color: #D387E9;
+      transform: scale(1.05);
+    }
+    .product-slider {
+      display: flex;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .product-slider.fade-transition {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .product-slider.fade-transition.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Top bar with logo -->
+  <div class="top-bar">
+    <img src="images\smartloom.png" alt="Company Logo" class="logo" />
+  </div>
+
+  <header>
+    <h1 data-aos="fade-down" data-aos-duration="1000"><b>Smart Deals. Flexible Payment Plans</b></h1>
+    <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+      Smartphones, laptops & more — pay once or over time.
+    </p>
+    <button class="cta-btn" data-aos="zoom-in" data-aos-delay="400">Get Started</button>
+  </header>
+
+  <section class="about" data-aos="fade-up">
+    <h2>📖 About Us</h2>
+    <p>At <b>SmartLoom</b>, we specialize in the <b>buying, selling, and trading of electronic devices</b> including smartphones, smartwatches, laptops, and more.</p>
+    <p>With over <b>6 years in the industry</b>, we’ve built a trusted name in delivering quality tech products at fair prices. Whether you're looking to upgrade, trade in, or simply find a deal on a reliable device, SmartLoom has got you covered.</p>
+    <p>We’re passionate about providing not only great tech but also great service—personalized payment plans, fair trade-in values, and warranty-backed products.</p>
+  </section>
+
+  <section class="products">
+    <h2 data-aos="fade-up">Our Products</h2>
+    <div class="products">
+      <div style="text-align:center; margin-bottom: 2rem;">
+        <label for="categorySelect">Choose a product category:</label>
+        <select id="categorySelect" onchange="filterProducts()" style="padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
+          <option value="all">All Products</option>
+          <option value="mobile">Mobile Devices</option>
+          <option value="laptop">Desktops & Laptops</option>
+          <option value="accessories">Accessories</option>
+        </select>
+      </div>
+      <div class="product-slider" id="productSlider">
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 14">
+          <h3>iPhone SE 3rd Gen</h3>
+          <p>R 4 999 Full Cash Payment.</p>
+          <p><strong>From R 999 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 15">
+          <h3>iPhone X</h3>
+          <p>R 3 750 Full Cash Payment.</p>
+          <p><strong>From R 750 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 1">
+          <h3>iPhone 11</h3>
+          <p>R 4500 Full Cash Payment.</p>
+          <p><strong>From R 900 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 2">
+          <h3>iPhone 11 Pro Max</h3>
+          <p>R 7 500 Full Cash Payment.</p>
+          <p><strong>From R 1 500 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 3">
+          <h3>iPhone 12</h3>
+          <p>R 5 000 Full Cash Payment.</p>
+          <p><strong>From R 999 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 4">
+          <h3>iPhone 12 Pro Max</h3>
+          <p>R 9 000 Full Cash Payment.</p>
+          <p><strong>From R 1 800 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 5">
+          <h3>iPhone 13</h3>
+          <p>R 8 500 Full Cash Payment.</p>
+          <p><strong>From R 1 700 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 6">
+          <h3>iPhone 13 Pro</h3>
+          <p>R 9 000 Full Cash Payment.</p>
+          <p><strong>From R 1 800 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 7">
+          <h3>iPhone 13 Pro Max</h3>
+          <p>R 12 500 Full Cash Payment.</p>
+          <p><strong>From R 2 500 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 7">
+          <h3>iPhone 13 Pro Max</h3>
+          <p>R 12 500 Full Cash Payment.</p>
+          <p><strong>From R 2 500 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 8">
+          <h3>iPhone 14 Pro</h3>
+          <p>R 11 500 Full Cash Payment.</p>
+          <p><strong>From R 2 300 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 8">
+          <h3>iPhone 14 Pro Max</h3>
+          <p>R 14 999 Full Cash Payment.</p>
+          <p><strong>From R 2 999 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 9">
+          <h3>iPhone 15</h3>
+          <p>R 13 500 Full Cash Payment.</p>
+          <p><strong>From R 2 700 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 10">
+          <h3>iPhone 15 Pro</h3>
+          <p>R 16 500 Full Cash Payment.</p>
+          <p><strong>From R 3 200 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 11">
+          <h3>iPhone 15 Pro Max</h3>
+          <p>R 16 500 Full Cash Payment.</p>
+          <p><strong>From R 3 200 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 12">
+          <h3>iPhone 16 Pro</h3>
+          <p>R 17 500 Full Cash Payment.</p>
+          <p><strong>From R 3 500 - per month</strong></p>
+        </div>
+        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\iphone12.png" alt="Product 13">
+          <h3>iPhone 16 Pro Max</h3>
+          <p>R 25 000 Full Cash Payment.</p>
+          <p><strong>From R 5 000 - per month</strong></p>
+        </div>
+        <div class="product-card laptop" data-aos="fade-up">
+          <h3></h3>
+          <p></p>
+          <p><strong>No Current Products Available</strong></p>
+        </div>
+        <div class="product-card accessories" data-aos="fade-up">
+          <h3></h3>
+          <p></p>
+          <p><strong>No Current Products Available</strong></p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 1rem;">
+        <button onclick="slideProducts(-1)">◀</button>
+        <button onclick="slideProducts(1)">▶</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="payment-section" data-aos="fade-up">
+    <h2>💳 Payment Plans</h2>
+    <div style="text-align:center; max-width: 800px; margin: auto; color: #ccc">
+      <p>We offer simple, flexible options:</p>
+      <ul style="margin-top: 1rem;">
+        <li>One-time Purchase – Best value</li>
+        <li>3-Month Installments – No interest</li>
+        <li>12-Month Installments – Budget-friendly</li>
+      </ul>
+    </div>
+  </section>
+
+<section class="faq" data-aos="fade-up">
+  <h2>❓Frequently Asked Questions</h2>
+
+  <div class="faq-card">
+    <h3>1. Do you offer payment plans?</h3>
+    <p>
+      Yes! We offer <strong>personalized lay-by payment plans</strong> ranging from 2 to 5 months. You can choose what works best for your budget.
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>2. When do I receive my device with lay-by?</h3>
+    <p>
+      Your device will be available for collection <strong>only once the final installment is paid in full.</strong>
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>3. Will you keep my phone aside while I pay it off?</h3>
+    <p>
+      Yes, but <strong>only after your first installment is received</strong>. Due to limited stock, we cannot reserve devices without a payment.
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>4. What do your warranties cover?</h3>
+    <ul>
+      <li><strong>Used devices:</strong> 3-month warranty</li>
+      <li><strong>New devices:</strong> 12-month warranty (covers internal hardware issues, <strong>excludes physical or water damage</strong>)</li>
+    </ul>
+  </div>
+</section>
+
+  <section class="terms-conditions" data-aos="fade-up">
+  <h2>📜 Terms & Conditions</h2>
+
+  <div class="terms-card">
+    <h3>Warranty Policy</h3>
+    <ul>
+      <li>All <strong>used devices</strong> come with a <strong>3-month limited warranty</strong> covering manufacturing defects and hardware malfunctions.</li>
+      <li>All <strong>brand new devices</strong> include a <strong>12-month warranty</strong> as per manufacturer guidelines.</li>
+      <li><strong>Warranty excludes:</strong>
+        <ul>
+          <li>Accidental damage (including water or impact damage)</li>
+          <li>Software tampering or unauthorized repairs</li>
+          <li>Cosmetic wear and tear</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="terms-card">
+    <h3>Returns & Exchanges</h3>
+    <ul>
+      <li>Requests must be made <strong>within 7 days of purchase</strong>.</li>
+      <li>Item must be in original condition with all accessories included.</li>
+      <li>Refunds (if applicable) are subject to inspection and approval.</li>
+    </ul>
+  </div>
+
+  <div class="terms-card">
+    <h3>Lay-By Policy</h3>
+    <ul>
+      <li>Custom lay-by plans range from <strong>2 to 5 months</strong>.</li>
+      <li><strong>Reservation</strong> starts once the first installment is received.</li>
+      <li>Item is released after final payment is completed.</li>
+      <li>If payments are missed, SmartLoom may cancel the lay-by and retain a cancellation fee.</li>
+    </ul>
+  </div>
+
+  <div class="terms-card">
+    <h3>Trading & Buying Devices</h3>
+    <ul>
+      <li>Devices are accepted based on <strong>condition, market demand, and authenticity</strong>.</li>
+      <li><strong>Valid ID</strong> is required for all trades and sales.</li>
+    </ul>
+  </div>
+
+  <div class="terms-card">
+    <h3>Delivery</h3>
+    <ul>
+      <li>Nationwide <strong>PostNet-to-PostNet</strong> delivery available.</li>
+      <li><strong>Free delivery</strong> for customers within Cape Town.</li>
+      <li>Tracking details are shared once the item is dispatched.</li>
+    </ul>
+    <em>SmartLoom is not responsible for courier delays after dispatch.</em>
+  </div>
+</section>
+
+
+  <section class="contact" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p>Email: smartloom.za@gmail.com</p>
+    <p>Phone: (+27) 76 271 8030</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tech Products. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    const slider = document.getElementById('productSlider');
+    const allCards = Array.from(slider.getElementsByClassName('product-card'));
+    let filteredCards = [...allCards];
+    let currentIndex = 0;
+
+    function filterProducts() {
+      const category = document.getElementById('categorySelect').value;
+
+      // Reset filter
+      filteredCards = allCards.filter(card =>
+        category === 'all' || card.classList.contains(category)
+      );
+
+      currentIndex = 0;
+      updateSliderView();
+    }
+
+    function updateSliderView() {
+      // Hide all cards
+      allCards.forEach(card => card.style.display = 'none');
+
+      // Show only 2 filtered cards starting from currentIndex
+      for (let i = currentIndex; i < currentIndex + 2 && i < filteredCards.length; i++) {
+        filteredCards[i].style.display = 'block';
+      }
+    }
+
+    function slideProducts(direction) {
+      const maxIndex = Math.max(0, filteredCards.length - 2);
+      currentIndex += direction * 2;
+
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+      updateSliderView();
+    }
+
+    // Initialize the view on load
+    window.onload = () => {
+      filterProducts();
+    };
+    
+  </script>
+  
+</body>
+</html>
