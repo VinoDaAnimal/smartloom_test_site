@@ -285,6 +285,74 @@
     }
 
 
+    @media (max-width: 400px) {
+  .logo {
+    width: 180px;
+    height: auto;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.4rem;
+  }
+
+  .products {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 1rem;
+  }
+
+  .product-card {
+    padding: 1rem;
+  }
+
+  .faq h2,
+  .terms-conditions h2,
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-card,
+  .terms-card {
+    padding: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  select#categorySelect {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .top-bar {
+    height: 80px;
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 2rem 1rem;
+  }
+}
 
   </style>
 </head>
@@ -305,7 +373,8 @@
 
   <section class="about" data-aos="fade-up">
     <h2>📖 About Us</h2>
-    <p>At <b>SmartLoom</b>, we specialize in the <b>buying, selling, and trading of electronic devices</b> including smartphones, smartwatches, laptops, and more.</p>
+    <p>At <b>SmartLoom</b>, we believe everyone deserves access to the latest tech—without breaking the bank.</p>
+    <BR>
     <p>With over <b>6 years in the industry</b>, we’ve built a trusted name in delivering quality tech products at fair prices. Whether you're looking to upgrade, trade in, or simply find a deal on a reliable device, SmartLoom has got you covered.</p>
     <p>We’re passionate about providing not only great tech but also great service—personalized payment plans, fair trade-in values, and warranty-backed products.</p>
   </section>
@@ -316,7 +385,6 @@
       <div style="text-align:center; margin-bottom: 2rem;">
         <label for="categorySelect">Choose a product category:</label>
         <select id="categorySelect" onchange="filterProducts()" style="padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
-          <option value="all">All Products</option>
           <option value="mobile">Mobile Devices</option>
           <option value="laptop">Desktops & Laptops</option>
           <option value="accessories">Accessories</option>
@@ -324,103 +392,97 @@
       </div>
       <div class="product-slider" id="productSlider">
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 14">
+          <img src="images\iphoneSE_3rdgen.png" alt="Product 14">
           <h3>iPhone SE 3rd Gen</h3>
           <p>R 4 999 Full Cash Payment.</p>
           <p><strong>From R 999 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 15">
+          <img src="images\iphoneX.png" alt="Product 15">
           <h3>iPhone X</h3>
           <p>R 3 750 Full Cash Payment.</p>
           <p><strong>From R 750 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 1">
+          <img src="images\iphone11.png" alt="Product 1">
           <h3>iPhone 11</h3>
           <p>R 4500 Full Cash Payment.</p>
           <p><strong>From R 900 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 2">
+          <img src="images\iphone11_promax.png" alt="Product 2">
           <h3>iPhone 11 Pro Max</h3>
           <p>R 7 500 Full Cash Payment.</p>
           <p><strong>From R 1 500 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 3">
+          <img src="images\iphone12_real.png" alt="Product 3">
           <h3>iPhone 12</h3>
           <p>R 5 000 Full Cash Payment.</p>
           <p><strong>From R 999 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 4">
+          <img src="images\iphone12_promax.png" alt="Product 4">
           <h3>iPhone 12 Pro Max</h3>
           <p>R 9 000 Full Cash Payment.</p>
           <p><strong>From R 1 800 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 5">
+          <img src="images\iphone13.png" alt="Product 5">
           <h3>iPhone 13</h3>
           <p>R 8 500 Full Cash Payment.</p>
           <p><strong>From R 1 700 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 6">
+          <img src="images\iphone13_promax.png" alt="Product 6">
           <h3>iPhone 13 Pro</h3>
           <p>R 9 000 Full Cash Payment.</p>
           <p><strong>From R 1 800 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 7">
+          <img src="images\iphone13_promax.png" alt="Product 7">
           <h3>iPhone 13 Pro Max</h3>
           <p>R 12 500 Full Cash Payment.</p>
           <p><strong>From R 2 500 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 7">
-          <h3>iPhone 13 Pro Max</h3>
-          <p>R 12 500 Full Cash Payment.</p>
-          <p><strong>From R 2 500 - per month</strong></p>
-        </div>
-        <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 8">
+          <img src="images\iphone14_promax.png" alt="Product 8">
           <h3>iPhone 14 Pro</h3>
           <p>R 11 500 Full Cash Payment.</p>
           <p><strong>From R 2 300 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 8">
+          <img src="images\iphone14_promax.png" alt="Product 8">
           <h3>iPhone 14 Pro Max</h3>
           <p>R 14 999 Full Cash Payment.</p>
           <p><strong>From R 2 999 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 9">
+          <img src="images\iphone15.png" alt="Product 9">
           <h3>iPhone 15</h3>
           <p>R 13 500 Full Cash Payment.</p>
           <p><strong>From R 2 700 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 10">
+          <img src="images\iphone15_pro.png" alt="Product 10">
           <h3>iPhone 15 Pro</h3>
           <p>R 16 500 Full Cash Payment.</p>
           <p><strong>From R 3 200 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 11">
+          <img src="images\iphone15_pro.png" alt="Product 11">
           <h3>iPhone 15 Pro Max</h3>
           <p>R 16 500 Full Cash Payment.</p>
           <p><strong>From R 3 200 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 12">
+          <img src="images\iphone16_pro.png" alt="Product 12">
           <h3>iPhone 16 Pro</h3>
           <p>R 17 500 Full Cash Payment.</p>
           <p><strong>From R 3 500 - per month</strong></p>
         </div>
         <div class="product-card mobile" data-aos="fade-up" data-aos-delay="100">
-          <img src="images\iphone12.png" alt="Product 13">
+          <img src="images\iphone16_pro.png" alt="Product 13">
           <h3>iPhone 16 Pro Max</h3>
           <p>R 25 000 Full Cash Payment.</p>
           <p><strong>From R 5 000 - per month</strong></p>
@@ -446,47 +508,104 @@
   <section class="payment-section" data-aos="fade-up">
     <h2>💳 Payment Plans</h2>
     <div style="text-align:center; max-width: 800px; margin: auto; color: #ccc">
-      <p>We offer simple, flexible options:</p>
+      <p>Flexible Lay-By Options:</p>
       <ul style="margin-top: 1rem;">
-        <li>One-time Purchase – Best value</li>
-        <li>3-Month Installments – No interest</li>
-        <li>12-Month Installments – Budget-friendly</li>
+        <li>Personalized Payment Plans – Choose between 2 to 5 months to pay at your own pace.</li>
+        <li>No Credit Checks – We don’t check your credit history.</li>
+        <li>Interest-Free – Pay the same price—no hidden fees.</li>
       </ul>
     </div>
   </section>
+
+  <section class="howitworks-section" data-aos="fade-up">
+  <h2>📦 How It Works</h2>
+  <div style="text-align:center; max-width: 800px; margin: auto; color: #ccc">
+    <p>Simple 4-Step Process:</p>
+    <ul style="margin-top: 1rem;">
+      <li>🛍️ <strong>Choose Your Device</strong> – Browse our range of new and pre-owned tech.</li>
+      <li>💰 <strong>Make Your First Payment</strong> – A small deposit secures your item.</li>
+      <li>🔒 <strong>We Reserve It for You</strong> – Your device is kept safe until fully paid.</li>
+      <li>🚚 <strong>Get It Delivered</strong> – Once paid off, we ship it to your door.</li>
+    </ul>
+  </div>
+</section>
+
 
 <section class="faq" data-aos="fade-up">
   <h2>❓Frequently Asked Questions</h2>
 
   <div class="faq-card">
-    <h3>1. Do you offer payment plans?</h3>
+    <h3>1. How does the lay-by plan work?</h3>
     <p>
-      Yes! We offer <strong>personalized lay-by payment plans</strong> ranging from 2 to 5 months. You can choose what works best for your budget.
+      You choose your payment period (2 to 5 months), make a first deposit, and we reserve the device for you. Once it’s fully paid, we deliver it.
     </p>
   </div>
 
   <div class="faq-card">
-    <h3>2. When do I receive my device with lay-by?</h3>
+    <h3>2. When is my device reserved?</h3>
     <p>
-      Your device will be available for collection <strong>only once the final installment is paid in full.</strong>
+      Your item is only reserved after we receive your first installment.
     </p>
   </div>
 
   <div class="faq-card">
-    <h3>3. Will you keep my phone aside while I pay it off?</h3>
+    <h3>3. Do you offer cash on delivery?</h3>
     <p>
-      Yes, but <strong>only after your first installment is received</strong>. Due to limited stock, we cannot reserve devices without a payment.
+      No, for safety reasons we don’t offer cash on delivery. All payments are made upfront or through our lay-by plan.
     </p>
   </div>
 
   <div class="faq-card">
-    <h3>4. What do your warranties cover?</h3>
+    <h3>4. Is there interest or credit checks?</h3>
+    <p>
+      No. All payment plans are 100% interest-free, and we do not perform any credit checks.
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>5. What delivery options do you offer?</h3>
+    <p>
+      We offer <strong>free delivery in Cape Town</strong> and <strong>nationwide PostNet-to-PostNet delivery</strong>.
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>6. Do your devices come with a warranty?</h3>
     <ul>
-      <li><strong>Used devices:</strong> 3-month warranty</li>
-      <li><strong>New devices:</strong> 12-month warranty (covers internal hardware issues, <strong>excludes physical or water damage</strong>)</li>
+      <li><strong>New devices:</strong> 12-month warranty</li>
+      <li><strong>Pre-owned devices:</strong> 3-month warranty</li>
     </ul>
   </div>
+
+  <div class="faq-card">
+    <h3>7. Can I upgrade my device before finishing my payment plan?</h3>
+    <p>
+      Yes, upgrading is available without extending your current payment plan.
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>8. What if I miss a payment?</h3>
+    <p>
+      We allow a grace period, but prolonged non-payment may lead to cancellation of the lay-by and loss of your deposit. Please communicate with us to avoid issues.
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>9. Can I pay off early?</h3>
+    <p>
+      Yes, you can settle your payment early at any time without penalties.
+    </p>
+  </div>
+
+  <div class="faq-card">
+    <h3>10. How do I contact you?</h3>
+    <p>
+      You can reach us via <strong>WhatsApp, email,</strong> or the <strong>Contact</strong> page on our website.
+    </p>
+  </div>
 </section>
+
 
   <section class="terms-conditions" data-aos="fade-up">
   <h2>📜 Terms & Conditions</h2>
@@ -560,49 +679,54 @@
     AOS.init();
   </script>
   <script>
-    const slider = document.getElementById('productSlider');
-    const allCards = Array.from(slider.getElementsByClassName('product-card'));
-    let filteredCards = [...allCards];
-    let currentIndex = 0;
+  const slider = document.getElementById('productSlider');
+  const allCards = Array.from(slider.getElementsByClassName('product-card'));
+  let filteredCards = [...allCards];
+  let currentIndex = 0;
 
-    function filterProducts() {
-      const category = document.getElementById('categorySelect').value;
+  function filterProducts() {
+    const category = document.getElementById('categorySelect').value;
 
-      // Reset filter
-      filteredCards = allCards.filter(card =>
-        category === 'all' || card.classList.contains(category)
-      );
+    // Filter cards based on category or show all
+    filteredCards = allCards.filter(card =>
+      category === 'all' || card.classList.contains(category)
+    );
 
-      currentIndex = 0;
-      updateSliderView();
+    currentIndex = 0;
+    updateSliderView();
+  }
+
+  function updateSliderView() {
+    // Hide all cards first
+    allCards.forEach(card => {
+      card.style.display = 'none';
+    });
+
+    // Show only 2 filtered cards starting from currentIndex
+    for (let i = currentIndex; i < currentIndex + 2 && i < filteredCards.length; i++) {
+      filteredCards[i].style.display = 'block';
     }
 
-    function updateSliderView() {
-      // Hide all cards
-      allCards.forEach(card => card.style.display = 'none');
+    // Optional: disable buttons if at boundaries
+    document.getElementById('prevBtn').disabled = currentIndex === 0;
+    document.getElementById('nextBtn').disabled = currentIndex + 2 >= filteredCards.length;
+  }
 
-      // Show only 2 filtered cards starting from currentIndex
-      for (let i = currentIndex; i < currentIndex + 2 && i < filteredCards.length; i++) {
-        filteredCards[i].style.display = 'block';
-      }
-    }
+  function slideProducts(direction) {
+    const maxIndex = Math.max(0, filteredCards.length - 2);
+    currentIndex += direction * 2;
 
-    function slideProducts(direction) {
-      const maxIndex = Math.max(0, filteredCards.length - 2);
-      currentIndex += direction * 2;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
+    updateSliderView();
+  }
 
-      updateSliderView();
-    }
-
-    // Initialize the view on load
-    window.onload = () => {
-      filterProducts();
-    };
-    
-  </script>
+  // Initialize the slider on page load
+  window.onload = () => {
+    filterProducts();
+  };
+</script>
   
 </body>
 </html>
